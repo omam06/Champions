@@ -1,17 +1,20 @@
 def closest_number(numbers, target):
-    if numbers is empty:
+    if numbers == []:
         return None
 
-    set closest to the first number
+    closest = numbers[0]
 
-    for each number in numbers:
-        calculate the distance between number and target
-        calculate the distance between closest and target
+    for number in numbers:
+        distance1 = abs(number - target)
+        distance2 = abs(closest - target)
 
-        if number's distance is smaller:
-            update closest to number
+        if distance1 < distance2:
+            closest = number
 
-        else if both distances are equal AND number is smaller than closest:
-            update closest to number
+        elif (distance1 == distance2) and number < closest:
+            closest = number
 
     return closest
+
+print(closest_number([10, 8, 15, 20], 21))
+print(closest_number([8, 12], 10))

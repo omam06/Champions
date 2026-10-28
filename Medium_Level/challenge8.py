@@ -1,16 +1,20 @@
 def insertion_sort_count(numbers):
-    Make a copy of numbers
-    Set shifts to 0
+    sorted_numbers = numbers.copy()
+    number_of_shifts = 0
 
-    for each index i from 1 to the last index:
-        Save the current number as key
-        Set j to i - 1
+    for index in range(1, len(sorted_numbers)):
+        current_number = sorted_numbers[index]
 
-        while j >= 0 and the number at j > key:
-            Move the number at j one position right
-            Increase shifts by 1
-            Decrease j by 1
+        left = index - 1
 
-        Put key into its correct position
+        while left >= 0 and sorted_numbers[left] > current_number:
+            sorted_numbers[left + 1] = sorted_numbers[left]
+            number_of_shifts += 1
+            left -= 1
+        sorted_numbers[left + 1] = current_number
 
-    return the sorted list and shifts
+    return sorted_numbers, number_of_shifts
+
+print(insertion_sort_count([5, 3, 4]))
+print(insertion_sort_count([-12, 21, 0, -1]))
+print(insertion_sort_count([]))

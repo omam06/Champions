@@ -1,21 +1,25 @@
 def most_frequent(numbers):
-    if numbers is empty:
+    if numbers == []:
         return None
 
-    create an empty dictionary called frequency
+    frequency = {}
 
-    for each number in numbers:
-        if number is already in frequency:
-            increase its frequency by 1
-        otherwise:
-            set its frequency to 1
+    for number in numbers:
+        if number in frequency:
+            frequency[number] += 1
+        else:
+            frequency[number] = 1
 
-    set most_common to the first number in numbers
-    set highest_count to its frequency
+    most_common_number = numbers[0]
+    highest_count = frequency[most_common_number]
 
-    for each number in numbers:
-        if its frequency is greater than highest_count:
-            update most_common to that number
-            update highest_count to its frequency
+    for number in numbers:
+        if frequency[number] > highest_count:
+            most_common_number = frequency[number]
+            highest_count = frequency[most_common_number]
 
-    return most_common
+    return most_common_number
+
+print(most_frequent([2, 5, 2, 8, 2, 5]))
+print(most_frequent([4, 7, 7, 4]))
+print(most_frequent([1, 2, 3, 4, 32]))
