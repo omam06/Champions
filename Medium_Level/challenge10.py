@@ -1,18 +1,30 @@
 def has_path(graph, start, target):
-    Create an empty set called visited
-    Create a stack containing start
+    visited = set()
+    stack = [start]
 
-    while tack is not empty:
-        Remove a node from the stack
+    while stack != []:
+        node = stack.pop()
 
-        if node equals target:
+        if node == target:
             return True
 
-        if node has not been visited:
-            Add node to visited
+        if node not in visited:
+            visited.add(node)
 
-            for each neighbor of node:
-                if neighbor has not been visited:
-                    Add neighbor to stack
+            for each_node in graph[node]:
+                if each_node not in visited:
+                    stack.append(each_node)
 
     return False
+
+graph = {
+    "A": ["B", "C"],
+    "B": ["D"],
+    "C": ["E"],
+    "D": [],
+    "E": ["F"],
+    "F": []
+}
+
+print(has_path(graph, "A", "F"))
+print(has_path(graph, "D", "A"))
