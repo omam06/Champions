@@ -1,0 +1,26 @@
+[
+    {
+        "id": "T001",
+        "Title": "monitor",
+        "Description": "the monitor just went blank",
+        "Priority": "Medium",
+        "Status": "open",
+        "created at": "2026-10-30 11:15:27"
+    },
+    {
+        "id": "T002",
+        "Title": "keyboard",
+        "Description": "some buttons hanging",
+        "Priority": "High",
+        "Status": "open",
+        "created at": "2026-10-30 11:17:08"
+    },
+    {
+        "id": "T003",
+        "Title": "heat",
+        "Description": "the fan at my corner stopped working",
+        "Priority": "Critical",
+        "Status": "open",
+        "created at": "2026-10-30 11:19:20"
+    }
+]
